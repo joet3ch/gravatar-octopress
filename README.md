@@ -2,6 +2,9 @@
 
 Plugin to display your Gravatar avatar in the sidebar of your Octopress site.
 
+Live example at <a href="http://joet3ch.com">http://joet3ch.com</a>
+
+
 ##Howto:
 
 - Copy 'gravatar.html' to the '_includes/custom/asides' directory.
