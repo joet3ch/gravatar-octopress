@@ -11,9 +11,15 @@ Live example at <a href="http://joet3ch.com">http://joet3ch.com</a>
 
 - Generate your Gravatar hash (md5 of your email address)
 
+**Mac OS**
 > $ md5 -s joe@t3ch.com
 
 > MD5 ("joe@t3ch.com") = 0380746aa5a0a708ed6b09324be42cb3
+
+**Linux**
+> $ echo joe@t3ch.com | md5sum -
+> 5cf9c07033d63892d325c62a6eca6975  -
+
 
 - Add your gravatar hash to the '_config.yml' file using the example provided.
 
