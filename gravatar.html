@@ -1,5 +1,7 @@
-{% if site.gravatar_hash %}
+{% if site.gravatar_email %}
 <section>
-  <img src="http://gravatar.com/avatar/{{site.gravatar_hash}}" alt="Gravatar image" title="Gravatar Image" />
+	<span>
+		<img src="{% gravatar_image %}" alt="Gravatar of {{ site.author}} " title="Gravatar of {{ site.author }}" />
+	</span>
 </section>
 {% endif %}
