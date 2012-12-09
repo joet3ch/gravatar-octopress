@@ -12,7 +12,7 @@ Live example at <a href="http://www.joet3ch.com">http://www.joet3ch.com</a> and 
 3. Update your '_config.yml' file to include a 'gravatar_email' variable. Example below which is also in the provided _config.yml file:
 
         \# Gravatar  
-        gravatar_email: youraddress@email.com
+        gravatar_email: youraddress@example.com
 
 4. Add 'gravatar.html' to your default_asides variable in the '_config.yml' settings file. Example:
 
