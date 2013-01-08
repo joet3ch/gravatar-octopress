@@ -5,6 +5,11 @@ module Jekyll
 
 	class Gravatar < Liquid::Tag
 
+                def initialize(tag_name, size, token)
+                  super
+                  @size = size.strip
+                end
+
 		def render(context)
 			# get the site config variables
 			site_config = context.registers[:site].config
@@ -19,6 +24,12 @@ module Jekyll
 
 			# compile the full Gravatar URL
 			image_src = "http://www.gravatar.com/avatar/#{gravatar_hash}"
+			
+                        # append size query to URL if provided in tag
+                        unless @size.empty?
+                          image_src = image_src+"?s=#{@size}"
+                        end
+			
 			# output the full Gravatar URL
 			image_src
 		end
