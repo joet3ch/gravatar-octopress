@@ -17,3 +17,9 @@ Live example at <a href="http://www.joet3ch.com">http://www.joet3ch.com</a> and 
 4. Add 'gravatar.html' to your default_asides variable in the '_config.yml' settings file. Example:
 
         default_asides: [custom/asides/gravatar.html, custom/asides/about.html, asides/twitter.html, asides/recent_posts.html]
+        
+##Customize Image Size:
+
+You can customize the size of the image in the gravatar.html file:
+
+        <img src="{% gravatar_image 200 %}" alt="Gravatar of {{ site.author}} " title="Gravatar of {{ site.author }}" />
