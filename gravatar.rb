@@ -3,39 +3,39 @@ require 'digest/md5'
 
 module Jekyll
 
-	class Gravatar < Liquid::Tag
+  class Gravatar < Liquid::Tag
 
-                def initialize(tag_name, size, token)
-                  super
-                  @size = size.strip
-                end
+    def initialize(tag_name, size, token)
+      super
+      @size = size.strip
+    end
 
-		def render(context)
-			# get the site config variables
-			site_config = context.registers[:site].config
+    def render(context)
+      # get the site config variables
+      site_config = context.registers[:site].config
 
-			# get the email address from the site config
-			email_address = site_config['gravatar_email']
-			# change the email address to all lowercase
-			email_address = email_address.downcase
+      # get the email address from the site config
+      email_address = site_config['gravatar_email']
+      # change the email address to all lowercase
+      email_address = email_address.downcase
 
-			# create an md5 hash from the email address
-			gravatar_hash = Digest::MD5.hexdigest(email_address)
+      # create an md5 hash from the email address
+      gravatar_hash = Digest::MD5.hexdigest(email_address)
 
-			# compile the full Gravatar URL
-			image_src = "http://www.gravatar.com/avatar/#{gravatar_hash}"
-			
-                        # append size query to URL if provided in tag
-                        unless @size.empty?
-                          image_src = image_src+"?s=#{@size}"
-                        end
-			
-			# output the full Gravatar URL
-			image_src
-		end
+      # compile the full Gravatar URL
+      image_src = "http://www.gravatar.com/avatar/#{gravatar_hash}"
 
-	end
-	
+      # append size query to URL if provided in tag
+      unless @size.empty?
+        image_src = image_src+"?s=#{@size}"
+      end
+
+      # output the full Gravatar URL
+      image_src
+    end
+
+  end
+
 end
 
 # register the "gravatar_image" tag
